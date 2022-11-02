@@ -19,6 +19,31 @@ const FilterContainer = styled.form`
   & .btn-success {
     padding: 5px 12px;
   }
+
+  @media (max-width: 1080px) {
+    width: 98%;
+    bottom: -25%;
+  }
+
+  @media (max-width: 992px) {
+    bottom: -50%;
+  }
+
+  @media (max-width: 768px) {
+    bottom: -70%;
+  }
+
+  @media (max-width: 726px) {
+    bottom: -60%;
+  }
+
+  @media (max-width: 630px) {
+    bottom: -55%;
+  }
+
+  @media (max-width: 576px) {
+    bottom: -38%;
+  }
 `;
 
 const Input = styled.input`

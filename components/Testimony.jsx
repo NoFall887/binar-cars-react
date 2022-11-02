@@ -56,7 +56,7 @@ const Testimony = () => {
         showThumbs={false}
         swipeable
         emulateTouch
-        centerSlidePercentage={60}
+        centerSlidePercentage={70}
         swipeScrollTolerance={2}
         centerMode
         selectedItem={currentSlide}

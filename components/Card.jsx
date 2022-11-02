@@ -8,6 +8,13 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 48%;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 `;
 const CardImage = styled.img`
   width: 100%;

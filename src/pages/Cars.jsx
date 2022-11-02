@@ -16,6 +16,17 @@ const SearchResult = styled.section`
   margin-top: 100px;
   margin-bottom: 6rem;
   justify-content: center;
+  @media (max-width: 1080px) {
+    margin-top: 112px;
+  }
+
+  @media (max-width: 992px) {
+    margin-top: 174px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 244px;
+  }
 `;
 
 function getRandomInt(min, max) {
