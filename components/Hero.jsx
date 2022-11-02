@@ -1,10 +1,12 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import GreenButton from "./GreenButton";
-import car from "/src/assets/mercedes.png";
+import SearchForm from "./SearchForm";
 
 const HeroContainer = styled.section`
   background-color: var(--hero-navbar-background);
+  position: relative;
 `;
 const HeroText = styled.p`
   max-width: 568px;
@@ -28,6 +30,8 @@ const CarImgContainer = styled.div`
 `;
 
 const Hero = () => {
+  const location = useLocation();
+
   return (
     <HeroContainer className="hero container-fluid">
       <div className="row pt-3 align-items-center">
@@ -40,14 +44,15 @@ const Hero = () => {
             terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
             untuk sewa mobil selama 24 jam.
           </HeroText>
-          <GreenButton type={"a"} href="#">
+          <GreenButton element={"a"} href="cars">
             Mulai Sewa Mobil
           </GreenButton>
         </div>
         <CarImgContainer className="col-12 col-sm position-relative overflow-hidden">
-          <CarImg src={car} alt="mercedes car" />
+          <CarImg src="../src/assets/mercedes.png" alt="mercedes car" />
         </CarImgContainer>
       </div>
+      {location.pathname === "/cars" && <SearchForm />}
     </HeroContainer>
   );
 };

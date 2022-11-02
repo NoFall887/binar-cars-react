@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <Nav className="navbar navbar-expand-lg">
       <NavContainer className="container-fluid px-sm-5">
-        <a className="navbar-brand" href="./index.html">
+        <a className="navbar-brand" href="/">
           <img src="/logo.png" alt="logo" />
         </a>
         <button
@@ -31,7 +31,7 @@ function Navbar() {
         </button>
         <div
           className="offcanvas offcanvas-end"
-          tabIndex="-1"
+          tabIndex={-1}
           id="offcanvasNavbar2"
           aria-labelledby="offcanvasNavbar2Label"
         >
@@ -69,7 +69,7 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <GreenButton href="#" type={"a"}>
+                <GreenButton href="#" element={"a"}>
                   Register
                 </GreenButton>
               </li>

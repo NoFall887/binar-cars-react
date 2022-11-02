@@ -1,31 +1,43 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const StyledBtn = styled.button`
-  background-color: var(--lime-green-04);
-  font-weight: 700;
-  color: white !important;
-  border-color: var(--lime-green-04);
-  padding: 8px 12px;
-  border-radius: 2px;
+const btnStyle = `
+background-color: var(--lime-green-04);
+font-weight: 700;
+color: white !important;
+border-color: var(--lime-green-04);
+padding: 8px 12px;
+border-radius: 2px;
 `;
 
-const StyledLink = styled(StyledBtn).attrs({
-  as: "a",
-})``;
+// @ts-ignore
+const StyledBtn = styled.button`
+  ${btnStyle}
+`;
 
-let GreenButton = ({ children, type }) => {
-  return type === "button" ? (
-    <StyledBtn className="btn btn-success">{children}</StyledBtn>
-  ) : type === "a" ? (
-    <StyledLink className="btn btn-success" role={"button"}>
+const StyledLink = styled(Link)`
+  ${btnStyle}
+`;
+
+let GreenButton = ({ children, element, ...props }) => {
+  return element === "button" ? (
+    <StyledBtn className="btn btn-success text-nowrap" {...props}>
+      {children}
+    </StyledBtn>
+  ) : element === "a" ? (
+    <StyledLink
+      className="btn btn-success text-nowrap"
+      role={"button"}
+      to={props.href}
+    >
       {children}
     </StyledLink>
   ) : null;
 };
 
 GreenButton.propTypes = {
-  type: PropTypes.oneOf(["button", "a"]),
+  element: PropTypes.oneOf(["button", "a"]),
 };
 export default GreenButton;
